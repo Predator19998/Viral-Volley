@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    Transform orgTransform;
+    Vector3 orgTransformPos;
+    Vector3 orgTransformAng;
     // Start is called before the first frame update
     void Start()
     {
-        orgTransform = transform;
+        orgTransformPos = transform.position;
+        orgTransformAng = transform.eulerAngles;
+
+
+
     }
 
     // Update is called once per frame
@@ -17,13 +22,15 @@ public class CameraScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position = new Vector3(0,10,30);
-            transform.eulerAngles = new Vector3(120, 0, 0);
+            transform.position = new Vector3(10, 50, 25);
+            transform.eulerAngles = new Vector3(90, 0, 0);
         }
         else
         {
-            transform.position = orgTransform.position;
-            transform.rotation = orgTransform.rotation;
+
+            transform.position = orgTransformPos;
+            transform.eulerAngles = orgTransformAng;
         }
     }
 }
+
