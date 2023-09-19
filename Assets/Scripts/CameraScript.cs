@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-
-    private float speed = 10.0f;
+    Transform orgTransform;
     // Start is called before the first frame update
     void Start()
     {
-
+        orgTransform = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("a"))
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
-        }
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.position = new Vector3(0,10,30);
+            transform.eulerAngles = new Vector3(120, 0, 0);
         }
-        if (Input.GetKey("w"))
+        else
         {
-            transform.Translate(Vector3.up * Time.deltaTime * speed);
-        }
-        if (Input.GetKey("s"))
-        {
-            transform.Translate(Vector3.down * Time.deltaTime * speed);
+            transform.position = orgTransform.position;
+            transform.rotation = orgTransform.rotation;
         }
     }
 }
