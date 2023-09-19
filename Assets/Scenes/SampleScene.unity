@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -685,6 +685,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ff41be9464b3438eb84ebe1f4d46bf4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 963194228}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ff41be9464b3438eb84ebe1f4d46bf4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598445962}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ff41be9464b3438eb84ebe1f4d46bf4, type: 3}
       insertIndex: -1
@@ -1068,6 +1071,37 @@ MonoBehaviour:
   infectedMaterial: {fileID: 2100000, guid: 68b25dc39a7c045e2ac0e8f555b47472, type: 2}
   cureMaterial: {fileID: 2100000, guid: b987dea4c5fa94e939e7171bf241b77f, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 3d7bfdb2325b947f796a237d306b1f2c, type: 2}
+--- !u!1 &598445961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598445962}
+  m_Layer: 0
+  m_Name: cameraLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598445962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598445961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.30510393, y: -0.008318379, z: -0.002667321, w: 0.952279}
+  m_LocalPosition: {x: 0, y: 3, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1677541142}
+  m_LocalEulerAnglesHint: {x: 35.524, y: -1.23, z: -0.715}
 --- !u!1 &682167740
 GameObject:
   m_ObjectHideFlags: 0

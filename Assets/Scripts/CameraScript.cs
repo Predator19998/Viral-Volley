@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    Vector3 orgTransformPos;
-    Vector3 orgTransformAng;
     // Start is called before the first frame update
     void Start()
     {
-        orgTransformPos = transform.position;
-        orgTransformAng = transform.eulerAngles;
-
-
 
     }
 
@@ -28,8 +22,8 @@ public class CameraScript : MonoBehaviour
         else
         {
 
-            transform.position = orgTransformPos;
-            transform.eulerAngles = orgTransformAng;
+            transform.position = GameObject.Find("cameraLoc").transform.position;
+            transform.eulerAngles = GameObject.Find("cameraLoc").transform.eulerAngles;
         }
     }
 }
