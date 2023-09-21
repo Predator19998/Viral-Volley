@@ -2557,7 +2557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &873952645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5514,6 +5514,8 @@ MonoBehaviour:
   turnText: {fileID: 1990727475}
   curedText: {fileID: 857218732}
   infectedText: {fileID: 416323055}
+  Win: {fileID: 873952646}
+  Lose: {fileID: 1913337580}
 --- !u!4 &1850555083
 Transform:
   m_ObjectHideFlags: 0
@@ -5614,7 +5616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1913337579
 RectTransform:
   m_ObjectHideFlags: 0

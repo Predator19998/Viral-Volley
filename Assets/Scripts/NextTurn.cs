@@ -34,6 +34,9 @@ public class NextTurn : MonoBehaviour
             }
         }
 
+        Win.enabled = false;
+        Lose.enabled = false;
+
     }
 
     public void Update()
@@ -56,12 +59,19 @@ public class NextTurn : MonoBehaviour
         {
             if(infected>cured)
             {
-                Win.enabled = true;
-            }
-            else if (cured > infected || infected == 0)
-            {
+                Win.enabled = false;
                 Lose.enabled = true;
             }
+            else if (cured > infected)
+            {
+                Lose.enabled = false;
+                Win.enabled = true;
+            }
+        }
+        else if(infected == 0)
+        {
+            Lose.enabled = false;
+            Win.enabled = true;
         }
     }
 
