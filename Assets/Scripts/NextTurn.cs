@@ -12,6 +12,8 @@ public class NextTurn : MonoBehaviour
     public Text turnText;
     public Text curedText;
     public Text infectedText;
+    public Text Win;
+    public Text Lose;
 
     private void Start()
     {
@@ -50,6 +52,17 @@ public class NextTurn : MonoBehaviour
         turnText.text = turn.ToString();
         curedText.text = cured.ToString();
         infectedText.text = infected.ToString();
+        if((cured+infected)==36)
+        {
+            if(infected>cured)
+            {
+                Win.enabled = true;
+            }
+            else if (cured > infected || infected == 0)
+            {
+                Lose.enabled = true;
+            }
+        }
     }
 
     public void ChangeTurn()
