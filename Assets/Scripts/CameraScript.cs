@@ -16,7 +16,7 @@ public class CameraScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position = new Vector3(10, 50, 25);
+            transform.position = new Vector3(10, 55, 25);
             transform.eulerAngles = new Vector3(90, 0, 0);
         }
         else
