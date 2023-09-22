@@ -43,27 +43,50 @@ public class InfectOrCure : MonoBehaviour
 
         Transform[] parentObjectTransform = gameObject.transform.parent.gameObject.GetComponentsInChildren<Transform>();
 
-        foreach(Transform childTransform in parentObjectTransform)
+        foreach (Transform childTransform in parentObjectTransform)
         {
-            if(childTransform.name.Contains((rowNumber+ spread).ToString() + columnNumber.ToString()) ||
-               childTransform.name.Contains(rowNumber.ToString() + (columnNumber+ spread).ToString()) ||
-               childTransform.name.Contains((rowNumber - spread).ToString() + columnNumber.ToString()) ||
-               childTransform.name.Contains(rowNumber.ToString() + (columnNumber- spread).ToString())
-               )
+
+            if (groundZero)
             {
-                if (isInfected && !isCured)
+                for (int i = -spread; i <= spread; i++)
                 {
-                    Debug.Log("Adjacent plane:" + childTransform.name);
-                    childTransform.GetComponent<InfectOrCure>().isInfected = true;
-                }
-                else if (isCured)
-                {
-                    childTransform.GetComponent<InfectOrCure>().isCured = true;
-                    childTransform.GetComponent<InfectOrCure>().isInfected = false;
+                    for (int j = -spread; j <= spread; j++)
+                    {
+                        if (i == 0 && j == 0) continue; // Skip the center plane
+
+                        string adjacentName = (rowNumber + i).ToString() + (columnNumber + j).ToString();
+
+                        if (childTransform.name.Contains(adjacentName))
+                        {
+                            Debug.Log("Adjacent plane:" + childTransform.name);
+                            if (!childTransform.GetComponent<InfectOrCure>().isInfected && !childTransform.GetComponent<InfectOrCure>().isCured)
+                            {
+                                childTransform.GetComponent<InfectOrCure>().isInfected = true;
+                            }
+                        }
+                    }
 
                 }
+
             }
+
+
+            else if (isHit)
+             {
+                if (childTransform.name.Contains((rowNumber + spread).ToString() + columnNumber.ToString()) ||
+                   childTransform.name.Contains(rowNumber.ToString() + (columnNumber + spread).ToString()) ||
+                   childTransform.name.Contains((rowNumber - spread).ToString() + columnNumber.ToString()) ||
+                   childTransform.name.Contains(rowNumber.ToString() + (columnNumber - spread).ToString())
+                   )
+                {
+                    if (!childTransform.GetComponent<InfectOrCure>().isCured)
+                    {
+                        childTransform.GetComponent<InfectOrCure>().isCured = true;
+                        childTransform.GetComponent<InfectOrCure>().isInfected = false;
+                        childTransform.GetComponent<InfectOrCure>().groundZero = false;
+                    }
+                }
+             }
         }
-        
     }
 }

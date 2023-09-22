@@ -11,7 +11,7 @@ public class DeployCure : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collided)
+        if (!collided)
         {
             GameObject collidedObject = collision.gameObject;
             Debug.Log("Collided with:" + collidedObject.name);
@@ -23,9 +23,7 @@ public class DeployCure : MonoBehaviour
             Destroy(gameObject);
 
             collided = true;
-        }
-        if(collided)
-        {
+
             Transform nextTurn = GameObject.Find("NextTurn").transform;
             nextTurn.GetComponent<NextTurn>().ChangeTurn();
         }
